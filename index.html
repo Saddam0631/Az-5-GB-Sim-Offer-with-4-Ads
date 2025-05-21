@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>৫ জিবি ইন্টারনেট ফ্রি</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #2193b0, #6dd5ed);
+      color: white;
+      padding: 20px;
+      position: relative;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ffdd33;
+    }
+
+    .input-container p {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .timer {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .share-buttons {
+      margin-top: 20px;
+    }
+
+    .share-buttons button {
+      background-color: #4267B2;
+      color: white;
+      margin: 5px;
+    }
+
+    .ad-placeholder {
+      background-color: #eeeeee;
+      color: #333;
+      padding: 10px;
+      margin: 20px auto;
+      max-width: 400px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .side-ad {
+      position: fixed;
+      top: 100px;
+      width: 120px;
+      height: 300px;
+      background-color: #eeeeee;
+      color: #333;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      z-index: 0;
+    }
+
+    .left-ad {
+      left: 10px;
+    }
+
+    .right-ad {
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .side-ad {
+        display: none;
+      }
+    }
+
+    .input-container {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Ad Placeholder -->
+  <div class="ad-placeholder"><script type="text/javascript">
+	atOptions = {
+		'key' : '14c288153eebd42e6d25e15429d3c2c4',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/14c288153eebd42e6d25e15429d3c2c4/invoke.js"></script></div>
+
+  <!-- Left Side Ad Placeholder -->
+  <div class="side-ad left-ad"><script type="text/javascript">
+	atOptions = {
+		'key' : '8a6f6564b9b77884282f5e3d56576fa5',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/8a6f6564b9b77884282f5e3d56576fa5/invoke.js"></script></div>
+
+  <!-- Right Side Ad Placeholder -->
+  <div class="side-ad right-ad"><script type="text/javascript">
+	atOptions = {
+		'key' : '467f9d983b72bdbdca10c616d7c7b3b7',
+		'format' : 'iframe',
+		'height' : 600,
+		'width' : 160,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/467f9d983b72bdbdca10c616d7c7b3b7/invoke.js"></script></div>
+
+  <div class="container">
+    <h1>৫ জিবি ইন্টারনেট ফ্রি!</h1>
+    <p>শুধু শেয়ার করুন ১০ বার, তারপর আপনার নাম ও মোবাইল নম্বর দিন ইন্টারনেট পেতে!</p>
+
+    <!-- Input Form Section -->
+    <div class="input-container" id="formSection">
+      <input type="text" id="userName" placeholder="আপনার নাম লিখুন" required>
+      <input type="text" id="userPhone" placeholder="আপনার মোবাইল নম্বর লিখুন" required>
+      <button onclick="submitToGoogleSheet(event)">জমা দিন</button>
+      <p id="responseMessage" style="color: lightgreen;"></p>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="timer">
+      অফার শেষ হতে: <span id="countdown">00:10:00</span>
+    </div>
+
+    <!-- Share Buttons -->
+    <div class="share-buttons">
+      <button onclick="share('facebook')">ফেসবুকে শেয়ার করুন</button>
+      <button onclick="share('whatsapp')">হোয়াটসঅ্যাপে শেয়ার করুন</button>
+      <p id="shareCountMessage">আপনি এখন পর্যন্ত <span id="shareCount">0</span> বার শেয়ার করেছেন।</p>
+    </div>
+  </div>
+
+  <!-- Footer Ad Placeholder -->
+  <div class="ad-placeholder"><script async="async" data-cfasync="false" src="//pl21219226.profitableratecpm.com/7feaa7ee5c0b18fe595833d31ebf4d8a/invoke.js"></script>
+<div id="container-7feaa7ee5c0b18fe595833d31ebf4d8a"></div></div>
+
+  <script>
+    let shareCount = 0;
+
+    function share(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent("৫ জিবি ফ্রি ইন্টারনেট নিচ্ছেন? দ্রুত শেয়ার করুন!");
+      if (platform === 'facebook') {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, '_blank');
+      } else if (platform === 'whatsapp') {
+        window.open(`https://api.whatsapp.com/send?text=${text}%20${url}`, '_blank');
+      }
+
+      shareCount++;
+      document.getElementById("shareCount").innerText = shareCount;
+
+      if (shareCount >= 10) {
+        document.getElementById("formSection").style.display = "block";
+      }
+    }
+
+    function submitToGoogleSheet(event) {
+      const name = document.getElementById('userName').value.trim();
+      const phone = document.getElementById('userPhone').value.trim();
+      const responseMsg = document.getElementById('responseMessage');
+      const submitBtn = event.target;
+
+      if (!name || !phone) {
+        alert("অনুগ্রহ করে নাম ও নম্বর পূরণ করুন");
+        return;
+      }
+
+      if (!/^01[0-9]{9}$/.test(phone)) {
+        alert("সঠিক ১১ সংখ্যার মোবাইল নম্বর দিন (যেমন: 017xxxxxxxx)");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "জমা দেওয়া হচ্ছে...";
+
+      fetch("https://script.google.com/macros/s/AKfycbyKHpnsvk8FiyqbgEJlTr9Xjiz5Atsdf7CfelHp5NwH2Mzgd-s1g5cvBB0cNnObtFCm/exec", {
+        method: "POST",
+        mode: 'no-cors',
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}`
+      }).then(() => {
+        responseMsg.innerText = "ধন্যবাদ! তথ্য গ্রহণ করা হয়েছে।";
+        document.getElementById('userName').value = "";
+        document.getElementById('userPhone').value = "";
+      }).catch(err => {
+        responseMsg.innerText = "ত্রুটি হয়েছে। আবার চেষ্টা করুন।";
+        console.error(err);
+      }).finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "জমা দিন";
+      });
+    }
+
+    // Countdown Timer Logic
+    let countdownTime = 600; // 10 minutes in seconds
+    const countdownEl = document.getElementById('countdown');
+    const timerInterval = setInterval(() => {
+      const minutes = String(Math.floor(countdownTime / 60)).padStart(2, '0');
+      const seconds = String(countdownTime % 60).padStart(2, '0');
+      countdownEl.textContent = `${minutes}:${seconds}`;
+      if (countdownTime <= 0) {
+        clearInterval(timerInterval);
+        countdownEl.textContent = "সময় শেষ";
+      }
+      countdownTime--;
+    }, 1000);
+  </script>
+
+</body>
+</html>
